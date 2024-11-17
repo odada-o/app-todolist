@@ -18,6 +18,7 @@ const TodoList = () => {
         return todos.filter((item) => item.task.toLowerCase().includes(search.toLowerCase()));
     }, [todos, search]);
 
+
     // TodoItem에서 사용할 핸들러를 useCallback으로 메모이제이션
     const handleUpdate = useCallback((id) => onUpdate(id), [onUpdate]);
     const handleDelete = useCallback((id) => onDelete(id), [onDelete]);
@@ -29,6 +30,7 @@ const TodoList = () => {
             value={search}
             onChange={onChangeSearch}
             placeholder="검색어를 입력하세요"/>
+
             <ul>
                 {filteredTodo().map((todo) => (
                     <TodoItem 
