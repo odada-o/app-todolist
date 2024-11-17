@@ -6,19 +6,16 @@ import TodoHd from "@/components/TodoHd";
 import TodoEditor from "@/components/TodoEditor";
 import TodoList from "@/components/TodoList";
 
-// 로컬 스토리지 키 선언
 const LOCAL_STORAGE_KEY = "my-todo-app-todos";
 
 const Todo = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState);
 
-  // 로컬 스토리지에서 초기 상태 로드
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
     savedTodos.forEach((todo) => dispatch({ type: ADD_TODO, payload: todo }));
   }, []);
 
-  // 상태 변경 시 로컬 스토리지에 저장
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
