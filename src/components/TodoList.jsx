@@ -18,8 +18,8 @@ const TodoList = () => {
         return todos.filter((item) => item.task.toLowerCase().includes(search.toLowerCase()));
     }, [todos, search]);
 
-    // lookBack 함수가 빈번하게 호출됩니다.
     // 최적화 테스트
+    // lookBack 함수가 빈번하게 호출됩니다.
     const lookBack = useMemo(() => {
         console.log('lookBack')
         const total = todos.length
