@@ -1,3 +1,6 @@
+// uuid 패키지를 사용하여 고유한 ID를 생성하고, 초기 상태와 Reducer 함수를 정의합니다.
+import {v4 as uuidv4} from "uuid";
+
 // 액션 타입 정의
 export const ADD_TODO = "ADD_TODO";
 export const UPDATE_TODO = "UPDATE_TODO";
@@ -12,7 +15,7 @@ export const todoReducer = (state, action) => {
     case ADD_TODO:
       return [
         {
-          id: state.length + 1,
+          id: uuidv4(), // 고유한 UUID 생성
           task: action.payload.task,
           isDone: false,
           createdDate: new Date().getTime(),
