@@ -4,8 +4,6 @@ import {useTodoContext} from "@/contexts/TodoContext";
 const TodoEditor = () => {
     const [task, setTask] = useState('');
     const inputRef = useRef();
-    // useTodoContext()를 통해 addTodo 함수를 가져온다.
-    // 구조분해 할당을 통해 addTodo 함수만 가져온다.
     const { addTodo } = useTodoContext();
 
     const onChangeTask = e => setTask(e.target.value);
