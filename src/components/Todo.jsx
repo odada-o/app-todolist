@@ -16,7 +16,7 @@ const Todo = () => {
       isDone: false,
       createdDate: new Date().getTime(),
     };
-    setTodos([newTodo, ...todos]); // 새로운 할 일을 기존 목록 앞에 추가
+    setTodos([newTodo, ...todos]); // 새로운 할 일을 기존 목록 앞에 추가 
   };
 
   const onUpdate = (id) => {
